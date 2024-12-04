@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wahdatul Muslimeen</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+      
+        header {
+            background-color: #1e1e1e;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #007bff;
+        }
+
+        header .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        header nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        header nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .buttons a {
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #121212;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+
+
+    
+        .hero {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .hero video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        /* Blog Section */
+        .section {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .section h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        .blogs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .blog {
+            background-color: #1e1e1e;
+            border: 1px solid #007bff;
+            border-radius: 8px;
+            padding: 20px;
+            width: 300px;
+            text-align: left;
+        }
+
+        .blog h3 {
+            font-size: 20px;
+            color: #007bff;
+        }
+
+        .blog p {
+            font-size: 14px;
+            margin-top: 10px;
+            color: #dddddd;
+        }
+
+        .blog a {
+            display: inline-block;
+            margin-top: 10px;
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: #1e1e1e;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+
+        .float-button {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease;
+        }
+
+        .float-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+  
+    <header>
+        <div class="logo">Wahdatul Muslimeen</div>
+        <nav>
+            <a href="#blog">Blog</a>
+            <a href="#about">About Us</a>
+            <a href="#why-choose-us">Why Choose Us</a>
+        </nav>
+        <div class="buttons">
+            <a href="donation.html">Donate</a>
+            <a href="event.html">Event</a>
+        </div>
+    </header>
+
+    
+    <section class="hero">
+        <video autoplay muted loop>
+            <source src="https://www.shutterstock.com/shutterstock/videos/1111263653/preview/stock-footage-an-islamic-background-for-a-mosque-in-dark-background-animation-mosque-as-seen-across-the-golden.webm" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-content">
+            <h1>Wahdatul Muslimeen</h1>
+            <p>Your gateway to authentic Islamic knowledge</p>
+        </div>
+    </section>
+
+    
+    <section id="blog" class="section blog-section">
+        <h2>Blog Posts</h2>
+        <div id="blog-container">
+          
+        </div>
+    </section>
+
+    <section id="about" class="section" style="background-color: #1e1e1e;">
+        <h2>About Us</h2>
+        <p>Welcome to Wahdatul Muslimeen, an esteemed educational institution dedicated to nurturing the minds and hearts of individuals in accordance with Islamic principles.
+
+            Founded on the core values of Islamic teachings, excellence in education, and community service, our mission is to empower individuals with the knowledge and character necessary to contribute positively to society, while remaining firmly rooted in Islamic ethics and values.
+            
+            At Wahdatul Muslimeen, we offer a comprehensive range of programs designed to meet the diverse needs of our students, from religious education to academic advancement. In addition to our core curriculum, we regularly organize lectures, seminars, and workshops aimed at deepening understanding and providing continuous learning opportunities in various fields. These events are designed to foster intellectual growth, promote Islamic scholarship, and encourage discussions on how Islamic values intersect with modern issues.
+            
+            Our dedicated faculty and staff are committed to creating a nurturing, supportive, and inclusive environment where students can grow spiritually and academically. We believe in balancing contemporary education with traditional Islamic teachings, offering a learning experience that is both practical and spiritually enriching.
+            
+            Through our lectures and seminars, we aim to create a vibrant community of learning where students can engage in meaningful discussions, broaden their horizons, and strengthen their connection to their faith. These events feature respected scholars, professionals, and community leaders who share their knowledge and insights on a wide range of topics—from Islamic theology and history to contemporary social issues.
+            
+            At Wahdatul Muslimeen, we believe that education goes beyond the classroom. It is about building character, promoting critical thinking, and developing a sense of responsibility towards others. We invite you to be part of our dynamic community, where faith, knowledge, and character come together to shape the leaders of tomorrow.</p>
+    </section>
+
+   
+    <section id="why-choose-us" class="section">
+        <h2>Why Choose Us</h2>
+        <p>At Wahdatul Muslimeen, we understand the importance of learning that transcends boundaries and reaches students wherever they are. Our online lectures and seminars are designed to provide you with the same high-quality education and spiritual enrichment you would receive in a traditional classroom, but with the flexibility and convenience of online learning.
+
+            Here’s why you should choose us for your online education:
+            
+            Comprehensive Islamic Education
+            Our online programs cover a wide range of topics, from Islamic theology and history to contemporary issues facing the Muslim community today. Whether you're looking to deepen your faith, expand your knowledge, or engage in discussions on modern-day challenges, our lectures and seminars provide a thorough, enriching experience.
+            
+            Expert Scholars and Instructors
+            We bring you teachings from highly qualified scholars and experts who are dedicated to sharing their knowledge in a way that is both engaging and accessible. Our instructors have a deep understanding of Islamic principles and modern academic standards, ensuring you receive balanced, insightful perspectives.
+            
+            Interactive and Engaging Learning Experience
+            Our online seminars aren’t just about passive listening; they are interactive and designed to encourage participation. You’ll have the opportunity to ask questions, engage in discussions, and connect with fellow learners in real time. This fosters a sense of community, even in an online setting.
+            
+            Convenience and Flexibility
+            With Wahdatul Muslimeen, you can access our online lectures and seminars from anywhere in the world, at a time that suits you. This flexibility allows you to balance your learning with other commitments, ensuring that you never have to miss out on valuable educational opportunities.
+            
+            Variety of Topics and Formats
+            We offer a wide range of topics in different formats—live lectures, recorded seminars, and interactive workshops—so you can choose the learning method that works best for you. Whether you're looking for in-depth analysis or practical knowledge, we have something for every interest.
+            
+            A Strong Focus on Islamic Values
+            Our institution is grounded in Islamic teachings, and we ensure that every lecture and seminar reflects the core values of faith, integrity, respect, and community. You’ll gain not just knowledge, but a deeper connection to your faith, guiding you in both your personal and professional life.
+            
+            Global Community
+            By joining our online learning platform, you become part of a global community of learners, scholars, and practitioners. This international network allows you to exchange ideas, share experiences, and build lasting relationships with like-minded individuals.
+            
+            Choosing Wahdatul Muslimeen means investing in a comprehensive and enriching educational experience that upholds the highest standards of Islamic knowledge and practice. Join us today to learn, grow, and connect with your faith—no matter where you are in the world.
+            
+            
+        </p>
+    </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const blogContainer = document.getElementById('blog-container');
+            const posts = JSON.parse(localStorage.getItem('blogPosts')) || [];
+        
+            if (posts.length === 0) {
+                blogContainer.innerHTML = '<p>No blog posts available. Add one by clicking "Add a New Post".</p>';
+                return;
+            }
+        
+        
+            posts.reverse();
+
+            posts.forEach(post => {
+                const postElement = document.createElement('div');
+                postElement.className = 'blog-post';
+                postElement.innerHTML = `
+                    <h3>${post.title}</h3>
+                    <p>${post.content}</p>
+                    ${post.image ? `<img src="${post.image}" alt="Blog Image" style="max-width: 100%;">` : ''}
+                    ${post.video ? `<video controls src="${post.video}" style="max-width: 100%;"></video>` : ''}
+                `;
+                blogContainer.appendChild(postElement);
+            });
+        });
+
+      
+        const floatButton = document.createElement('button');
+        floatButton.classList.add('float-button');
+        floatButton.innerHTML = '↓';  
+        document.body.appendChild(floatButton);
+
+        let scrollingDown = true;
+
+        floatButton.addEventListener('click', () => {
+            if (scrollingDown) {
+                window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+                floatButton.innerHTML = '↑';
+            } else {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                floatButton.innerHTML = '↓';
+            }
+            scrollingDown = !scrollingDown;
+        });
+    </script>
+
+    <footer>
+        <p>&copy; 2024 Wahdatul Muslimeen. All rights reserved. | <a href="#">Privacy Policy</a></p>
+    </footer>
+</body>
+</html>

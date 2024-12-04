@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pay Page - Bank Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #001f3f;
+            color: #ffffff;
+            padding: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #00152a;
+            border: 1px solid #007bff;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            text-align: center;
+            color: #007bff;
+        }
+        .details {
+            background-color: #003c66;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Bank Payment Details</h1>
+        <div class="details">
+            <h2>Current Bank Details</h2>
+            <p><strong>Bank Name:</strong> <span id="displayBankName"></span></p>
+            <p><strong>Account Number:</strong> <span id="displayAccountNumber"></span></p>
+            <p><strong>Bank:</strong> <span id="displayBank"></span></p>
+        </div>
+        
+    </div>
+
+    <script>
+
+        const defaultDetails = {
+            bankName: 'Bisis',
+            accountNumber: '9166724452',
+            bank: 'Opay'
+        };
+
+  
+        function loadDetails() {
+            const details = JSON.parse(localStorage.getItem('bankDetails')) || defaultDetails;
+            document.getElementById('displayBankName').innerText = details.bankName;
+            document.getElementById('displayAccountNumber').innerText = details.accountNumber;
+            document.getElementById('displayBank').innerText = details.bank;
+        }
+
+       
+        window.onload = loadDetails;
+    </script>
+
+</body>
+</html>

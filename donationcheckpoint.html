@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+        }
+        .container {
+            width: 90%;
+            max-width: 500px;
+            margin: 50px auto;
+            background: #001f3f;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+        h1 {
+            text-align: center;
+            color: #00aaff;
+        }
+        p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background: #00aaff;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0077cc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Complete Your Payment</h1>
+        <p><strong>Name:</strong> <span id="donorName"></span></p>
+        <p><strong>Email:</strong> <span id="donorEmail"></span></p>
+        <p><strong>Phone:</strong> <span id="donorPhone"></span></p>
+        <p><strong>Donation Amount:</strong>#<span id="donationAmount"></span></p>
+        <button onclick="completePayment()">Pay Now</button>
+    </div>
+
+    <script>
+    
+        const urlParams = new URLSearchParams(window.location.search);
+        const name = urlParams.get('name');
+        const email = urlParams.get('email');
+        const phone = urlParams.get('phone');
+        const amount = urlParams.get('amount');
+
+   
+        document.getElementById('donorName').textContent = name || 'N/A';
+        document.getElementById('donorEmail').textContent = email || 'N/A';
+        document.getElementById('donorPhone').textContent = phone || 'N/A';
+        document.getElementById('donationAmount').textContent = amount || '0';
+
+        function completePayment() {
+            alert('continue with your payment.');
+           
+            window.location.href = 'pay.html';
+        }
+    </script>
+</body>
+</html>
