@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a2e;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            background-color: #162447;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #1f4068;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Timit Youth Forum Registration Form </h1>
+        <form id="registration-form">
+            <input type="text" id="name" placeholder="Name" required>
+            <input type="text" id="familyName" placeholder="Family Name" required>
+            <input type="text" id="school" placeholder="School" required>
+            <input type="text" id="department" placeholder="Department of Study" required>
+            <select id="level" required>
+                <option value="" disabled selected>Select Level</option>
+                <option value="Secondary">Secondary</option>
+                <option value="University">University</option>
+            </select>
+            <input type="text" id="skills" placeholder="Skills (Optional)">
+            <input type="number" id="age" placeholder="Age" required>
+            <input type="text" id="phone" placeholder="Phone Number" required>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+    <script>
+        const form = document.querySelector("#registration-form");
+        const registrants = JSON.parse(localStorage.getItem("registrants")) || [];
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            const name = document.querySelector("#name").value;
+            const familyName = document.querySelector("#familyName").value;
+            const school = document.querySelector("#school").value;
+            const department = document.querySelector("#department").value;
+            const level = document.querySelector("#level").value;
+            const skills = document.querySelector("#skills").value;
+            const age = document.querySelector("#age").value;
+            const phone = document.querySelector("#phone").value;
+            const group = registrants.length % 2 === 0 ? "Group A" : "Group B";
+
+            const newRegistrant = {
+                name,
+                familyName,
+                school,
+                department,
+                level,
+                skills,
+                age,
+                phone,
+                group,
+            };
+
+            registrants.push(newRegistrant);
+            localStorage.setItem("registrants", JSON.stringify(registrants));
+            form.reset();
+            alert("Registration Successful!");
+        });
+    </script>
+</body>
+</html>
