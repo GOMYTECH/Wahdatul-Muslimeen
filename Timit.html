@@ -3,96 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration</title>
-
+    <title>Student Registration Form</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #1a1a2e;
-            color: white;
+            background-color: #f4f4f4;
+            color: #333;
             margin: 0;
             padding: 0;
         }
         .container {
-            max-width: 600px;
-            margin: auto;
+            width: 60%;
+            margin: 50px auto;
             padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         h1 {
+            color: #2c3e50;
             text-align: center;
         }
-        form {
-            background-color: #162447;
-            padding: 20px;
-            border-radius: 8px;
+        .form-group {
+            margin-bottom: 15px;
         }
-        input, select, button {
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input,
+        .form-group select {
             width: 100%;
             padding: 10px;
-            margin: 10px 0;
-            border: none;
-            border-radius: 4px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
         }
-        button {
-            background-color: #1f4068;
+        .form-group button {
+            background-color: #2980b9;
             color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
             cursor: pointer;
+        }
+        .form-group button:hover {
+            background-color: #3498db;
         }
     </style>
 </head>
 <body>
+
     <div class="container">
-        <h1>Timit Youth Forum Registration Form </h1>
-        <form id="registration-form">
-            <input type="text" id="name" placeholder="Name" required>
-            <input type="text" id="familyName" placeholder="Family Name" required>
-            <input type="text" id="school" placeholder="School" required>
-            <input type="text" id="department" placeholder="Department of Study" required>
-            <select id="level" required>
-                <option value="" disabled selected>Select Level</option>
-                <option value="Secondary">Secondary</option>
-                <option value="University">University</option>
-            </select>
-            <input type="text" id="skills" placeholder="Skills (Optional)">
-            <input type="number" id="age" placeholder="Age" required>
-            <input type="text" id="phone" placeholder="Phone Number" required>
-            <button type="submit">Register</button>
+        <h1>Student Registration Form</h1>
+        
+        <form id="registrationForm">
+            <!-- Name -->
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName" required>
+            </div>
+
+            <!-- Family Name -->
+            <div class="form-group">
+                <label for="familyName">Family Name</label>
+                <input type="text" id="familyName" name="familyName" required>
+            </div>
+
+            <!-- Gender -->
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender" required>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <!-- Age -->
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input type="number" id="age" name="age" required>
+            </div>
+
+            <!-- Level -->
+            <div class="form-group">
+                <label for="level">Level</label>
+                <select id="level" name="level" required>
+                    <option value="Secondary">Secondary</option>
+                    <option value="University">University</option>
+                </select>
+            </div>
+
+            <!-- Phone Number -->
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+
+            <!-- Department -->
+            <div class="form-group">
+                <label for="department">Department of Study</label>
+                <input type="text" id="department" name="department" required>
+            </div>
+
+            <!-- School Name -->
+            <div class="form-group">
+                <label for="schoolName">School Name</label>
+                <input type="text" id="schoolName" name="schoolName" required>
+            </div>
+
+            <!-- Skills (Optional) -->
+            <div class="form-group">
+                <label for="skills">Skills (Optional)</label>
+                <textarea id="skills" name="skills"></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group">
+                <button type="submit">Submit</button>
+            </div>
         </form>
     </div>
-    <script>
-        const form = document.querySelector("#registration-form");
-        const registrants = JSON.parse(localStorage.getItem("registrants")) || [];
 
-        form.addEventListener("submit", (e) => {
+    <script>
+        const form = document.getElementById('registrationForm');
+
+        form.addEventListener('submit', function (e) {
             e.preventDefault();
 
-            const name = document.querySelector("#name").value;
-            const familyName = document.querySelector("#familyName").value;
-            const school = document.querySelector("#school").value;
-            const department = document.querySelector("#department").value;
-            const level = document.querySelector("#level").value;
-            const skills = document.querySelector("#skills").value;
-            const age = document.querySelector("#age").value;
-            const phone = document.querySelector("#phone").value;
-            const group = registrants.length % 2 === 0 ? "Group A" : "Group B";
+            const firstName = document.getElementById('firstName').value;
+            const familyName = document.getElementById('familyName').value;
+            const gender = document.getElementById('gender').value;
+            const age = document.getElementById('age').value;
+            const level = document.getElementById('level').value;
+            const phone = document.getElementById('phone').value;
+            const department = document.getElementById('department').value;
+            const schoolName = document.getElementById('schoolName').value;
+            const skills = document.getElementById('skills').value;
 
-            const newRegistrant = {
-                name,
+            // Create a registrant object
+            const registrant = {
+                firstName,
                 familyName,
-                school,
-                department,
-                level,
-                skills,
+                gender,
                 age,
+                level,
                 phone,
-                group,
+                department,
+                schoolName,
+                skills
             };
 
-            registrants.push(newRegistrant);
-            localStorage.setItem("registrants", JSON.stringify(registrants));
-            form.reset();
-            alert("Registration Successful!");
+            // Save the registrant to localStorage
+            let registrants = JSON.parse(localStorage.getItem('registrants')) || [];
+            registrants.push(registrant);
+            localStorage.setItem('registrants', JSON.stringify(registrants));
+
+            // Redirect to the list page
+            window.location.href = 'list.html';
         });
     </script>
+
 </body>
 </html>
