@@ -7,8 +7,8 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
+            background-color: #1a1a1a;
+            color: white;
             margin: 0;
             padding: 0;
         }
@@ -16,12 +16,12 @@
             width: 60%;
             margin: 50px auto;
             padding: 20px;
-            background-color: #fff;
+            background-color: #333;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         h1 {
-            color: #2c3e50;
+            color: #3498db;
             text-align: center;
         }
         .form-group {
@@ -31,17 +31,21 @@
             display: block;
             margin-bottom: 5px;
             font-weight: bold;
+            color: #ecf0f1;
         }
         .form-group input,
-        .form-group select {
+        .form-group select,
+        .form-group textarea {
             width: 100%;
             padding: 10px;
             font-size: 16px;
             border: 1px solid #ccc;
             border-radius: 5px;
+            background-color: #555;
+            color: white;
         }
         .form-group button {
-            background-color: #2980b9;
+            background-color: #3498db;
             color: white;
             padding: 10px 20px;
             font-size: 16px;
@@ -50,7 +54,7 @@
             cursor: pointer;
         }
         .form-group button:hover {
-            background-color: #3498db;
+            background-color: #2980b9;
         }
     </style>
 </head>
@@ -60,19 +64,16 @@
         <h1>Student Registration Form</h1>
         
         <form id="registrationForm">
-            <!-- Name -->
             <div class="form-group">
                 <label for="firstName">First Name</label>
                 <input type="text" id="firstName" name="firstName" required>
             </div>
 
-            <!-- Family Name -->
             <div class="form-group">
                 <label for="familyName">Family Name</label>
                 <input type="text" id="familyName" name="familyName" required>
             </div>
 
-            <!-- Gender -->
             <div class="form-group">
                 <label for="gender">Gender</label>
                 <select id="gender" name="gender" required>
@@ -82,13 +83,11 @@
                 </select>
             </div>
 
-            <!-- Age -->
             <div class="form-group">
                 <label for="age">Age</label>
                 <input type="number" id="age" name="age" required>
             </div>
 
-            <!-- Level -->
             <div class="form-group">
                 <label for="level">Level</label>
                 <select id="level" name="level" required>
@@ -97,31 +96,26 @@
                 </select>
             </div>
 
-            <!-- Phone Number -->
             <div class="form-group">
                 <label for="phone">Phone Number</label>
                 <input type="tel" id="phone" name="phone" required>
             </div>
 
-            <!-- Department -->
             <div class="form-group">
                 <label for="department">Department of Study</label>
                 <input type="text" id="department" name="department" required>
             </div>
 
-            <!-- School Name -->
             <div class="form-group">
                 <label for="schoolName">School Name</label>
                 <input type="text" id="schoolName" name="schoolName" required>
             </div>
 
-            <!-- Skills (Optional) -->
             <div class="form-group">
                 <label for="skills">Skills (Optional)</label>
                 <textarea id="skills" name="skills"></textarea>
             </div>
 
-            <!-- Submit Button -->
             <div class="form-group">
                 <button type="submit">Submit</button>
             </div>
@@ -168,4 +162,4 @@
     </script>
 
 </body>
-</html>
+                </html>
