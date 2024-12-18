@@ -12,7 +12,6 @@
             color: #ffffff;
         }
 
-      
         header {
             background-color: #1e1e1e;
             padding: 20px;
@@ -53,8 +52,6 @@
             border-radius: 4px;
         }
 
-
-    
         .hero {
             position: relative;
             height: 100vh;
@@ -150,7 +147,6 @@
             text-decoration: none;
         }
 
-
         .float-button {
             position: fixed;
             right: 20px;
@@ -169,6 +165,75 @@
         .float-button:hover {
             background-color: #0056b3;
         }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 32px;
+            }
+
+            .hero-content p {
+                font-size: 16px;
+            }
+
+            .buttons a {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+
+            .blogs {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .blog {
+                width: 90%;
+                margin: 0 auto;
+            }
+
+            header nav {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+
+            header .logo {
+                font-size: 22px;
+            }
+
+            footer {
+                font-size: 14px;
+            }
+
+            .float-button {
+                padding: 12px;
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 28px;
+            }
+
+            .hero-content p {
+                font-size: 14px;
+            }
+
+            .buttons a {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+
+            footer {
+                font-size: 12px;
+            }
+
+            .float-button {
+                padding: 10px;
+                font-size: 18px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -179,7 +244,7 @@
             <a href="#blog">Blog</a>
             <a href="#about">About Us</a>
             <a href="#why-choose-us">Why Choose Us</a>
-             <a href="Timit Youth Forum Registration.html">Timit Youth Forum Registration</a>
+             <a href="Timit.html">Timit Youth Forum Registration</a>
         </nav>
         <div class="buttons">
             <a href="donation.html">Donate</a>
