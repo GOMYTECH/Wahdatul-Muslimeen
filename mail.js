@@ -36,12 +36,16 @@ document.getElementById('').addEventListener('submit',submitform);
 function submitform(e)(
 e.preventDefault();
 
-  var name = getelementval('');
+  var firstName = getelementval('firstName');
+  var familyName = getelementval('familyName);
+var gender = getelementval('gender');
+var age = getelementval('age');
+  var level = getelementval('level');
+var phonenumber = getelementval('phone');
+var departmentofstudy= getelementval('department');
+var schoolname = getelementval('schoolname');
+var skills = getelementval('skills');
 
-
-
-savedMessages();
-)
 const savemessages=()=>(
   var timit = timitDB.push();
 newtimit.set((
