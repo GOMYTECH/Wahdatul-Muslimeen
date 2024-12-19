@@ -33,7 +33,7 @@ firebase.initializeApp(firebaseConfig);
 const timitDB=firebase.database().ref('timit');
 document.getElementById('').addEventListener('submit',submitform);
 
-function submitform(e)(
+function submitform(e) {
 e.preventDefault();
 
   var firstName = getelementval('firstName');
@@ -45,11 +45,24 @@ var phonenumber = getelementval('phone');
 var departmentofstudy= getelementval('department');
 var schoolname = getelementval('schoolname');
 var skills = getelementval('skills');
+  
+saveMessages(First Name,Family Name,Gender,Age,Level,PhoneNumber,DepartmentofStudy,SchoolName,Skills);
+}
 
-const savemessages=()=>(
+const saveMessages = (First Name,Family Name,Gender,Age,Level,PhoneNumber,DepartmentofStudy,SchoolName,Skills)=>(
   var timit = timitDB.push();
-newtimit.set((
-  ));
+newtimit.set({
+firstName: firstName,
+  familyName: familyName,
+  gender: gender,
+ age: age,
+  level: level,
+  phonenumber: phone,
+  departmentofstudy: department,
+    schoolname: schoolname,
+  skills: skills,
+
+  )};
 const getElementval = (id) => (
   return document.getElementById(id).value;
-  );
+};
