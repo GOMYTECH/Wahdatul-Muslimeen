@@ -4,7 +4,7 @@ const firebaseConfig = {
   authDomain: "timit-63209.firebaseapp.com",
   databaseURL: "https://timit-63209-default-rtdb.firebaseio.com",
   projectId: "timit-63209",
-  storageBucket: "timit-63209.firebasestorage.app",
+  storageBucket: "timit-63209.appspot.com",
   messagingSenderId: "387541308403",
   appId: "1:387541308403:web:2e2cbf2cdb56fb020df886"
 };
@@ -12,40 +12,48 @@ const firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-// reference  your database
-const timitDB=firebase.database().ref('timit');
-document.getElementById('').addEventListener('submit',submitform);
+// Reference your database
+const timitDB = firebase.database().ref("timit");
 
-function submitform(e) {
-e.preventDefault();
+// Add event listener to the form
+document.getElementById("registrationForm").addEventListener("submit", submitForm);
 
-  var firstName = getelementval('firstName');
-  var familyName = getelementval('familyName);
-var gender = getelementval('gender');
-var age = getelementval('age');
-  var level = getelementval('level');
-var phonenumber = getelementval('phone');
-var departmentofstudy= getelementval('department');
-var schoolname = getelementval('schoolname');
-var skills = getelementval('skills');
-  
-saveMessages(First Name,Family Name,Gender,Age,Level,PhoneNumber,DepartmentofStudy,SchoolName,Skills);
+function submitForm(e) {
+  e.preventDefault();
+
+  // Get form values
+  var firstName = getElementVal("firstName");
+  var familyName = getElementVal("familyName");
+  var gender = getElementVal("gender");
+  var age = getElementVal("age");
+  var level = getElementVal("level");
+  var phoneNumber = getElementVal("phone");
+  var departmentOfStudy = getElementVal("department");
+  var schoolName = getElementVal("schoolName");
+  var skills = getElementVal("skills");
+
+  // Save the form data to Firebase
+  saveMessages(firstName, familyName, gender, age, level, phoneNumber, departmentOfStudy, schoolName, skills);
+
+  // Clear the form
+  document.getElementById("registrationForm").reset();
 }
 
-const saveMessages = (First Name,Family Name,Gender,Age,Level,PhoneNumber,DepartmentofStudy,SchoolName,Skills)=>(
-  var timit = timitDB.push();
-newtimit.set({
-firstName: firstName,
-  familyName: familyName,
-  gender: gender,
- age: age,
-  level: level,
-  phonenumber: phone,
-  departmentofstudy: department,
-    schoolname: schoolname,
-  skills: skills,
+const saveMessages = (firstName, familyName, gender, age, level, phoneNumber, departmentOfStudy, schoolName, skills) => {
+  var newTimitEntry = timitDB.push();
+  newTimitEntry.set({
+    firstName: firstName,
+    familyName: familyName,
+    gender: gender,
+    age: age,
+    level: level,
+    phoneNumber: phoneNumber,
+    departmentOfStudy: departmentOfStudy,
+    schoolName: schoolName,
+    skills: skills,
+  });
+};
 
-  )};
-const getElementval = (id) => (
+const getElementVal = (id) => {
   return document.getElementById(id).value;
 };
