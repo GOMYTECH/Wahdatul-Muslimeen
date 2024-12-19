@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -122,44 +122,8 @@
         </form>
     </div>
 
-    <script>
-        const form = document.getElementById('registrationForm');
-
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            const firstName = document.getElementById('firstName').value;
-            const familyName = document.getElementById('familyName').value;
-            const gender = document.getElementById('gender').value;
-            const age = document.getElementById('age').value;
-            const level = document.getElementById('level').value;
-            const phone = document.getElementById('phone').value;
-            const department = document.getElementById('department').value;
-            const schoolName = document.getElementById('schoolName').value;
-            const skills = document.getElementById('skills').value;
-
-            // Create a registrant object
-            const registrant = {
-                firstName,
-                familyName,
-                gender,
-                age,
-                level,
-                phone,
-                department,
-                schoolName,
-                skills
-            };
-
-            // Save the registrant to localStorage
-            let registrants = JSON.parse(localStorage.getItem('registrants')) || [];
-            registrants.push(registrant);
-            localStorage.setItem('registrants', JSON.stringify(registrants));
-
-            // Redirect to the list page
-            window.location.href = 'Index.html';
-        });
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+<script src="mail.js"></script>
 
 </body>
                 </html>
