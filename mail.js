@@ -26,3 +26,26 @@
 
 
   };
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+// reference  your database
+const timitDB=firebase.database().ref('timit');
+document.getElementById('').addEventListener('submit',submitform);
+
+function submitform(e)(
+e.preventDefault();
+
+  var name = getelementval('');
+
+
+
+savedMessages();
+)
+const savemessages=()=>(
+  var timit = timitDB.push();
+newtimit.set((
+  ));
+const getElementval = (id) => (
+  return document.getElementById(id).value;
+  );
